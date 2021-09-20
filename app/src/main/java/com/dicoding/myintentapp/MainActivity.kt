@@ -28,7 +28,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_move_activity_data -> {
-                
+                val moveWithDataActivity = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveWithDataActivity.putExtra(MoveWithDataActivity.EXTRA_NAME,"Dicoding Pazrin")
+                moveWithDataActivity.putExtra(MoveWithDataActivity.EXTRA_AGE, 20)
+                startActivity(moveWithDataActivity)
             }
         }
     }
