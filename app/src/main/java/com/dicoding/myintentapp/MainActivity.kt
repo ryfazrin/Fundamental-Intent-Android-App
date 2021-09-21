@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         // Move activity with object
         val btnMoveWithObject: Button = findViewById(R.id.btn_move_activity_object)
-        btnMoveActivity.setOnClickListener(this)
+        btnMoveWithObject.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -32,10 +32,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_move_activity_data -> {
-                val moveWithDataActivity = Intent(this@MainActivity, MoveWithDataActivity::class.java)
-                moveWithDataActivity.putExtra(MoveWithDataActivity.EXTRA_NAME,"Dicoding Pazrin")
-                moveWithDataActivity.putExtra(MoveWithDataActivity.EXTRA_AGE, 20)
-                startActivity(moveWithDataActivity)
+                val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME,"Dicoding Pazrin")
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 20)
+                startActivity(moveWithDataIntent)
+            }
+
+            R.id.btn_move_activity_object -> {
+                val person = Person(
+                    "Ryan Pazrin",
+                    5,
+                    "academy@dicoding.com",
+                    "Bandung"
+                )
+
+                val moveWithObjectIntent = Intent(this@MainActivity, MoveWithObjectActivity::class.java)
+                moveWithObjectIntent.putExtra(MoveWithObjectActivity.EXTRA_PERSON, person)
+                startActivity(moveWithObjectIntent)
             }
         }
     }
