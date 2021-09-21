@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Move activity with data
         val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_activity_data)
         btnMoveWithDataActivity.setOnClickListener(this)
+
+        // Move activity with object
+        val btnMoveWithObject: Button = findViewById(R.id.btn_move_activity_object)
+        btnMoveActivity.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
