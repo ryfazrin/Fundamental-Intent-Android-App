@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Move activity with object
         val btnMoveWithObject: Button = findViewById(R.id.btn_move_activity_object)
         btnMoveWithObject.setOnClickListener(this)
+
+        // Implicit Intent
+        val btnDialPhone: Button = findViewById(R.id.btn_dial_number)
+        btnDialPhone.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
